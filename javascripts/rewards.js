@@ -11,30 +11,25 @@ const REWARDS = [
         () => [new Operator(OperatorType.MultVariable, null, new Slot(0, new Constant(2), true)), 1],
         () => [new Operator(OperatorType.Logarithm), 1],
         () => [new Operator(OperatorType.Logarithm, new Slot(0, new Variable("P"), true)), 1],
-        () => [new Constant(randInt(11,30)), randInt(1,2)],
+        () => [new Constant(randInt(6,30)), randInt(1,2)],
     ],
     [
-        () => [new Operator(OperatorType.Product), 1],
-        () => [new Operator(OperatorType.MultVariable), 1],
+        () => [new Operator(OperatorType.Product, null, new Slot(0, new Operator(OperatorType.Logarithm), true)), 1],
+        () => [new Operator(OperatorType.MultVariable, null, new Slot(0, new Operator(OperatorType.Logarithm), true)), 1],
+    ],
+    [
         () => [new Operator(OperatorType.Exponent, null, new Slot(0, new Constant(2), true)), 1],
-    ],
-    [
-        () => [new Operator(OperatorType.Exponent, null, new Slot(0, new Constant(randInt(3,5)), true)), 1],
         () => [new Operator(OperatorType.Repeat, new Slot(4, new Constant(randInt(2, 3)), true)), 1],
-    ],
-    [
-        () => [new Operator(OperatorType.Exponent, null, new Slot(0, new Constant(10), true)), 1],
     ],
 ]
 
-const REWARD_CHANCES = [1,1/10,1/60,1/200,1/700,0]
+const REWARD_CHANCES = [1,1/15,1/80,1/300,0]
 
 const REWARD_RARITIES = [
     ["Common", "#888"],
     ["Uncommon", "#35bd86"],
     ["Rare", "#09f"],
     ["Epic", "#90f"],
-    ["Legendary", "#f90"],
 ]
 
 function calculateRewards(count = 6) {
