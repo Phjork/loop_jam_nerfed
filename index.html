@@ -82,7 +82,7 @@
         <div class="o-popups" v-if="player.popup.enabled || player.completed">
             <div v-if="player.completed">
                 Choose 3 of rewards!
-                <div><b>Common ~88%</b> | <b>Uncommon 10%</b> | <b>Rare 1.66%</b> | <b>Epic 0.5%</b> | <b>Legendary 0.14%</b></div>
+                <div><b>Common ~92%</b> | <b>Uncommon 6.66%</b> | <b>Rare 1.25%</b> | <b>Epic 0.33%</b></div>
                 <div class="o-rewards-grid">
                     <div v-for="([s, k, r], i) in player.rewards" class="o-slot-div" :class="{choosed: player.choosedRewards.has(i)}" :style="{'--primary-color': REWARD_RARITIES[r][1]}" @click="chooseReward(i)">
                         <div class="o-slot-amount">{{ REWARD_RARITIES[r][0] }} x{{ k }}</div>
